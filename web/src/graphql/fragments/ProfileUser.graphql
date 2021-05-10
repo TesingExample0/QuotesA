@@ -1,0 +1,21 @@
+fragment ProfileUser on User {
+  id
+  inviteLink
+  name
+  email
+  address
+  city
+  state
+  zip
+  role
+  catagory
+  title
+  company
+  twitter
+  facebook
+  linkedIn
+  website
+  customerType
+  ccLast4
+  DefaultTemplates
+}

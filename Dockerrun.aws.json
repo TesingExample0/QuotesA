@@ -1,0 +1,94 @@
+{
+    "AWSEBDockerrunVersion":2,
+    "volumes":[
+        {
+            "name":"redis_data",
+            "host":{
+                "sourcepath":"redis_data/redis.config"
+            }
+        },
+        {
+            "name":"data",
+            "host":{
+                "sourcepath":"var/lib/postgresql/data"
+            }
+        },
+        {
+            "name":"sever",
+            "host":{
+                "sourcepath":"server/src/app"
+            }
+        }
+    ],
+    "containerDefinations":[
+        {
+        "enviorment":[{
+            "name":"POSTGRES_USER",
+            "value":"postgres"
+        },
+        {
+            "name":"POSTGRES_PASSWORD",
+            "value":"Kaspro"
+        },
+        {
+            "name":"POSTGRES_DB",
+            "value":"nexus"
+        }
+    ],
+    "essential":true,
+    "image":"postgres",
+    "memory":256,
+    "name":"postgres",
+    "portMapping":[{
+        "containerPort":5432,
+        "hostPort":5432
+    }],
+    "mountPoints":[
+        {
+            "sourceVolume": "data",
+          "containerPath": "/data"
+        }
+    ]
+    },
+    {
+        "essential":true,
+        "image":"redis",
+        "memory":128,
+        "name":"RedisStore",
+        "portMapping":[{
+            "containerPort":6379,
+            "hostPort":6379
+        }],
+        "mountPoints":[
+            {
+                "sourceVolume": "redis_data",
+              "containerPath": "/redis_data"
+            }
+        ]
+    },
+    {
+        "essential":true,
+        "links":[
+            "postgres",
+            "RedisStore"
+        ],
+        "depends_on":[
+            "postgres",
+            "RedisStore" 
+        ],
+        "image":"tuser9742/serverimage",
+        "name":"serverimage",
+        "memory":256,
+        "portMapping":[{
+            "containerPort":4000,
+            "hostPort":4000
+        }],
+        "mountPoints":[
+            {
+                "sourceVolume": "server",
+              "containerPath": "/server/src/app"
+            }
+        ]
+    }
+]
+}

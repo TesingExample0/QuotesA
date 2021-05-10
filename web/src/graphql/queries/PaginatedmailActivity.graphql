@@ -1,0 +1,8 @@
+query paginatedActivity($limit: Int!, $cursor: String) {
+  PaginatedmailActivity(limit: $limit, cursor: $cursor) {
+    hasMore
+    PaginatedmailActivity {
+      ...PaginatedActivitySnippet
+    }
+  }
+}

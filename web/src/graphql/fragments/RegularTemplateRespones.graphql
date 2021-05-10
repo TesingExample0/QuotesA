@@ -1,0 +1,8 @@
+fragment RegularTemplateResponse on TemplateRespones {
+  errors {
+    ...RegularError
+  }
+  template {
+    ...RegularTemplates
+  }
+}

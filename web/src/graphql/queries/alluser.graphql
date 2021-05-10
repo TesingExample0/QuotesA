@@ -1,0 +1,5 @@
+query alluser {
+  alluser {
+    ...alluserSnippet
+  }
+}

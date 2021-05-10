@@ -1,0 +1,48 @@
+version: "3.8"
+services: 
+  server:     
+    image: "serverimage"
+    build:
+      context: "./server"
+    restart: always
+    ports:     
+      - 4000:4000
+    volumes:
+      - ./server:/server/src/app
+      - server/src/app/node_modules
+      - server/src/app/dist
+    depends_on:
+      - postgres
+      - RedisStore
+    links:
+      - postgres
+      - RedisStore
+    entrypoint: ["node", "dist/index.js"]
+    networks:
+      - QAnetwork
+  postgres:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: Kaspro
+      POSTGRES_USER: postgres
+      POSTGRES_DB: nexus
+    volumes:
+      - ./data/db:/var/lib/postgresql/data
+    networks:
+      - QAnetwork
+  RedisStore:
+    image: redis
+    restart: always
+    volumes:
+      - ./redis_data:/redis_data/data
+      - ./redis_data:/redis_data/redis.config
+    hostname: redis
+    networks:
+      - QAnetwork
+networks:
+  QAnetwork:
+    driver: bridge
+    
+
+

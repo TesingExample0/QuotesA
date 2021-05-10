@@ -1,0 +1,5 @@
+mutation CreateQuote($input: QuoteInput!) {
+  createQuote(input: $input) {
+    ...RegularQuoteResponse
+  }
+}

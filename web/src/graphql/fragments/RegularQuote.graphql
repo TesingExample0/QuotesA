@@ -1,0 +1,3 @@
+fragment RegularQuote on Quote {
+  id
+}

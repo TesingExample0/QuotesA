@@ -1,0 +1,3 @@
+mutation DeleteTemplate($id: Int!) {
+  deleteTemplate(id: $id)
+}

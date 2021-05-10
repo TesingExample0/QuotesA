@@ -1,0 +1,17 @@
+mutation UpdateTemplates(
+  $id: Int!
+  $title: String!
+  $body: String!
+  $subject: String!
+  $Active: Boolean!
+) {
+  updateTemplates(
+    id: $id
+    title: $title
+    body: $body
+    subject: $subject
+    Active: $Active
+  ) {
+    ...RegularTemplateResponse
+  }
+}

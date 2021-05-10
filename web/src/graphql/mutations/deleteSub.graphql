@@ -1,0 +1,3 @@
+mutation DeleteSub($id: Int!) {
+  deleteSub(id: $id)
+}
