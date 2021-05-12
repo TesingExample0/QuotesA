@@ -4,19 +4,19 @@
         {
             "name":"redis_data",
             "host":{
-                "sourcepath":"/var/lib/redis_data/_data"
+                "sourcepath":"/var/lib/docker/volumes/docekrAW_redis_data/_data"
             }
         },
         {
             "name":"data",
             "host":{
-                "sourcepath":"/var/lib/data/_data"
+                "sourcepath":"/var/lib/docker/volumes/docekrAW_data/_data"
             }
         },
         {
             "name":"server",
             "host":{
-                "sourcepath":"/var/lib/server/_data"
+                "sourcepath":"/var/lib/docker/volumes/docekrAW_server/_data"
             }
         }
     ],
@@ -37,7 +37,7 @@
         }
     ],
     "essential":true,
-    "image":"postgres",
+    "image":"postgres:latest",
     "memory":256,
     "name":"postgres",
     "portMapping":[{
@@ -53,7 +53,7 @@
     },
     {
         "essential":true,
-        "image":"redis",
+        "image":"redis:latest",
         "memory":128,
         "name":"RedisStore",
         "portMapping":[{
