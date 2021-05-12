@@ -1,7 +1,7 @@
 version: "3.8"
 services:
   server:
-    image: "tuser9742/serverimage"
+    image: "serverimage"
     build:
       context: "./server"
     restart: always

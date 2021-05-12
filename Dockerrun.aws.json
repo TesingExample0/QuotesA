@@ -68,15 +68,6 @@
         ]
     },
     {
-        "essential":true,
-        "links":[
-            "postgres",
-            "RedisStore"
-        ],
-        "depends_on":[
-            "postgres",
-            "RedisStore" 
-        ],
         "image":"tuser9742/serverimage",
         "name":"serverimage",
         "memory":256,
@@ -89,7 +80,17 @@
                 "sourceVolume": "server",
               "containerPath": "/server/src/app"
             }
+        ],
+        "essential":true,
+        "links":[
+            "postgres",
+            "RedisStore"
+        ],
+        "depends_on":[
+            "postgres",
+            "RedisStore" 
         ]
+       
     }
 ]
 }
