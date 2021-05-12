@@ -4,25 +4,26 @@
         {
             "name":"redis_data",
             "host":{
-                "sourcepath":"redis_data/redis.config"
+                "sourcepath":"/var/lib/redis_data/_data"
             }
         },
         {
             "name":"data",
             "host":{
-                "sourcepath":"var/lib/postgresql/data"
+                "sourcepath":"/var/lib/data/_data"
             }
         },
         {
-            "name":"sever",
+            "name":"server",
             "host":{
-                "sourcepath":"server/src/app"
+                "sourcepath":"/var/lib/server/_data"
             }
         }
     ],
     "containerDefinations":[
         {
-        "enviorment":[{
+        "enviorment":[
+        {
             "name":"POSTGRES_USER",
             "value":"postgres"
         },
@@ -46,7 +47,7 @@
     "mountPoints":[
         {
             "sourceVolume": "data",
-          "containerPath": "/data"
+          "containerPath": "/var/lib/postgresql/data"
         }
     ]
     },
@@ -62,7 +63,7 @@
         "mountPoints":[
             {
                 "sourceVolume": "redis_data",
-              "containerPath": "/redis_data"
+              "containerPath": "/redis_data/data"
             }
         ]
     },
