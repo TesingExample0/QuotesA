@@ -37,7 +37,7 @@
         }
     ],
     "essential":true,
-    "image":"postgres:latest",
+    "image":"postgres",
     "memory":256,
     "name":"postgres",
     "portMapping":[{
@@ -53,7 +53,7 @@
     },
     {
         "essential":true,
-        "image":"redis:latest",
+        "image":"redis",
         "memory":128,
         "name":"RedisStore",
         "portMapping":[{
