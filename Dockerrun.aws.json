@@ -1,22 +1,22 @@
 {
-    "AWSEBDockerrunVersion":3,
+    "AWSEBDockerrunVersion":2,
     "volumes":[
         {
             "name":"redis_data",
             "host":{
-                "sourcepath":"/var/lib/docker/volumes/docekrAW_redis_data/_data"
+                "sourcepath":"/var/app/current/redis_data"
             }
         },
         {
             "name":"data",
             "host":{
-                "sourcepath":"/var/lib/docker/volumes/docekrAW_data/_data"
+                "sourcepath":"/var/app/current/data"
             }
         },
         {
             "name":"server",
             "host":{
-                "sourcepath":"/var/lib/docker/volumes/docekrAW_server/_data"
+                "sourcepath":"/var/app/current/server"
             }
         }
     ],
