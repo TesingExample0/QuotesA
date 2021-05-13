@@ -1,0 +1,5 @@
+query subbytoken($token: String!) {
+  subbytoken(token: $token) {
+    ...SubSnippet
+  }
+}

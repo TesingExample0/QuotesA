@@ -69,7 +69,7 @@
     },
     {
         "image":"tuser9742/serverimage",
-        "name":"serverimage",
+        "name":"server",
         "memory":256,
         "portMapping":[{
             "containerPort":4000,

@@ -1,0 +1,9 @@
+mutation updateMailandFrequency(
+  $token: String!
+  $frequency: Float!
+  $email: String!
+) {
+  updateMailandFrequency(token: $token, frequency: $frequency, email: $email) {
+    ...RegularSubResponse
+  }
+}

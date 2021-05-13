@@ -1,0 +1,8 @@
+query Quotes($limit: Int!, $cursor: String) {
+  quotes(limit: $limit, cursor: $cursor) {
+    hasMore
+    quotes {
+      ...QuoteSnippet
+    }
+  }
+}

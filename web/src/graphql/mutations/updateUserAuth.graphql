@@ -1,0 +1,5 @@
+mutation UpdateUserAuth($input: UserAuthInput!) {
+  updateAuth(input: $input) {
+    ...RegularUserResponse
+  }
+}

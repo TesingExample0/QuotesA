@@ -1,0 +1,24 @@
+fragment PaginatedActivitySnippet on MailActivity {
+  id
+  From_Email
+  To_Email
+  subject
+  Status
+  msgid
+  open_count
+  clicks_count
+  createdAt
+  body
+  creatorId
+  Author
+  type
+  subsid
+  user {
+    id
+    name
+  }
+  subs {
+    id
+    name
+  }
+}

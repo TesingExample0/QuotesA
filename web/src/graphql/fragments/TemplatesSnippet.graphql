@@ -1,0 +1,8 @@
+fragment TemplatesSnippet on Templates {
+  id
+  title
+  body
+  subject
+  Active
+  createdAt
+}

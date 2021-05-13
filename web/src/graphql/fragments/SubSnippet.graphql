@@ -1,0 +1,13 @@
+fragment SubSnippet on Sub {
+  id
+  createdAt
+  updatedAt
+  name
+  email
+  subscribed
+  frequency
+  creator {
+    id
+    email
+  }
+}

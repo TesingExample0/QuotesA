@@ -1,0 +1,4 @@
+fragment AllsubSnippet on SubsCount {
+  ActiveCount
+  NonActiveCount
+}

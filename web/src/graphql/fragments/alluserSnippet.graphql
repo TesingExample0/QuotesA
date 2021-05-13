@@ -1,0 +1,6 @@
+fragment alluserSnippet on Alluser {
+  user {
+    id
+    name
+  }
+}
