@@ -1,5 +1,0 @@
-mutation CreateSub($input: SubInput!) {
-  createSub(input: $input) {
-    ...RegularSubResponse
-  }
-}

@@ -1,8 +1,0 @@
-query mailActivitybyId($limit: Int!, $cursor: String, $id: Int!) {
-  PaginatedmailActivitybyId(limit: $limit, cursor: $cursor, id: $id) {
-    hasMore
-    PaginatedmailActivity {
-      ...PaginatedActivitySnippet
-    }
-  }
-}

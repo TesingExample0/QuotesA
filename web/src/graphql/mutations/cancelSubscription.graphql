@@ -1,5 +1,0 @@
-mutation CancelSubscription {
-  cancelSubscription {
-    ...ProfileUserResponse
-  }
-}

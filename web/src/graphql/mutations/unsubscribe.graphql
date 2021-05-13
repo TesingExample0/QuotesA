@@ -1,5 +1,0 @@
-mutation UnsubscribeSub($token: String!) {
-  unsubscribeSub(token: $token) {
-    ...RegularSubResponse
-  }
-}

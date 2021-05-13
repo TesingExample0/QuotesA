@@ -1,3 +1,0 @@
-mutation DeleteQuote($id: Int!) {
-  deleteQuote(id: $id)
-}

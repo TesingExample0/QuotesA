@@ -1,8 +1,0 @@
-query GetAlltemplates($limit: Int!, $cursor: String) {
-  getAlltemplates(limit: $limit, cursor: $cursor) {
-    hasMore
-    templates {
-      ...TemplatesSnippet
-    }
-  }
-}

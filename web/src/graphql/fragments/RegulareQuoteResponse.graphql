@@ -1,8 +1,0 @@
-fragment RegularQuoteResponse on QuoteResponse {
-  errors {
-    ...RegularError
-  }
-  quote {
-    ...RegularQuote
-  }
-}

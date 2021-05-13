@@ -1,5 +1,0 @@
-mutation CreateSubFromContact($token: String!,$emails: String!) {
-  createSubFromContact(token: $token,emails: $emails) {
-    ...RegularSubResponse
-  }
-}

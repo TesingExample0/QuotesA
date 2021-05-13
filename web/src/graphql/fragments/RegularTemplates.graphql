@@ -1,3 +1,0 @@
-fragment RegularTemplates on Templates {
-  id
-}

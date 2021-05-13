@@ -1,9 +1,0 @@
-mutation AcceptInvite(
-  $token: String!
-  $subscribed: Boolean!
-  $frequency: Float!
-) {
-  acceptInvite(token: $token, subscribed: $subscribed, frequency: $frequency) {
-    ...RegularSubResponse
-  }
-}

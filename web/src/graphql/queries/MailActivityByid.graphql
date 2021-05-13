@@ -1,5 +1,0 @@
-query mailActivityById($id: Int!) {
-  mailActivityById(id: $id) {
-    ...ActivitySnippet
-  }
-}

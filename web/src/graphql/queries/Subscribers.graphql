@@ -1,8 +1,0 @@
-query Subs($limit: Int!, $cursor: String) {
-  subs(limit: $limit, cursor: $cursor) {
-    hasMore
-    subs {
-      ...SubSnippet
-    }
-  }
-}

@@ -1,5 +1,0 @@
-mutation CreateSubFromInvite($input: SubInviteInput!) {
-  createSubFromInvite(input: $input) {
-    ...RegularSubResponse
-  }
-}

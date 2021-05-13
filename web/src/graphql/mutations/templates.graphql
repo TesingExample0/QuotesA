@@ -1,5 +1,0 @@
-mutation createTemplates($input: templateInput!) {
-  createTemplates(input: $input) {
-    ...RegularTemplateResponse
-  }
-}

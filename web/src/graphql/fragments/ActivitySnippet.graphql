@@ -1,5 +1,0 @@
-fragment ActivitySnippet on ActivityRespone {
-  mailActivity {
-    ...RegularMailRespones
-  }
-}

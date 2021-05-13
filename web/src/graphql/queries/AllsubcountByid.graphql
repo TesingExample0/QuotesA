@@ -1,5 +1,0 @@
-query AllsubsId($Id: Int!) {
-  AllsubsId(Id: $Id) {
-    ...AllsubSnippet
-  }
-}

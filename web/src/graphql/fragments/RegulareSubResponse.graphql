@@ -1,8 +1,0 @@
-fragment RegularSubResponse on SubResponse {
-  errors {
-    ...RegularError
-  }
-  sub {
-    ...RegularSub
-  }
-}

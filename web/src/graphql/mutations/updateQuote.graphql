@@ -1,5 +1,0 @@
-mutation UpdateQuote($id: Int!, $name: String!, $catagory: String!) {
-  updateQuote(id: $id, name: $name, catagory: $catagory) {
-    ...RegularQuoteResponse
-  }
-}
