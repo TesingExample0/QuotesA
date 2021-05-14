@@ -1,7 +1,7 @@
 version: "3.0"
 services:
   server:
-    image: "tuser9742/serverimage"
+    image: "tuser9742/serverimage:latest"
     # build:
     #   context: "./server"
     restart: always
@@ -22,7 +22,7 @@ services:
     networks:
       - QAnetwork
   postgres:
-    image: postgres
+    image: postgres:latest
     container_name: "postgres"
     restart: always
     environment:
@@ -34,7 +34,7 @@ services:
     networks:
       - QAnetwork
   RedisStore:
-    image: redis
+    image: redis:latest
     restart: always
     container_name: "RedisStore"
     volumes:
