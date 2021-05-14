@@ -1,25 +1,5 @@
 {
     "AWSEBDockerrunVersion":2,
-    "volumes":[
-        {
-            "name":"redis_data",
-            "host":{
-                "sourcepath":"/var/app/current/redis_data"
-            }
-        },
-        {
-            "name":"data",
-            "host":{
-                "sourcepath":"/var/app/current/data"
-            }
-        },
-        {
-            "name":"server",
-            "host":{
-                "sourcepath":"/var/app/current/server"
-            }
-        }
-    ],
     "containerDefinations":[
         {
         "enviorment":[
@@ -43,13 +23,7 @@
     "portMapping":[{
         "containerPort":5432,
         "hostPort":5432
-    }],
-    "mountPoints":[
-        {
-            "sourceVolume": "data",
-          "containerPath": "/var/lib/postgresql/data"
-        }
-    ]
+    }]
     },
     {
         "essential":true,
@@ -59,13 +33,7 @@
         "portMapping":[{
             "containerPort":6379,
             "hostPort":6379
-        }],
-        "mountPoints":[
-            {
-                "sourceVolume": "redis_data",
-              "containerPath": "/redis_data/data"
-            }
-        ]
+        }]
     },
     {
         "image":"tuser9742/serverimage:latest",
@@ -75,12 +43,6 @@
             "containerPort":4000,
             "hostPort":4000
         }],
-        "mountPoints":[
-            {
-                "sourceVolume": "server",
-              "containerPath": "/server/src/app"
-            }
-        ],
         "essential":true,
         "links":[
             "postgres",

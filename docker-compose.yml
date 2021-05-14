@@ -1,7 +1,7 @@
 version: "3.0"
 services:
   server:
-    image: "tuser9742/serverimage:latest"
+    image: "tuser9742/serverimage"
     # build:
     #   context: "./server"
     restart: always
