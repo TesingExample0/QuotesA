@@ -1,0 +1,96 @@
+{
+    "AWSEBDockerrunVersion":2,
+    "volumes":[
+        {
+            "name":"redis_data",
+            "host":{
+                "sourcepath":"/var/app/current/redis_data"
+            }
+        },
+        {
+            "name":"data",
+            "host":{
+                "sourcepath":"/var/app/current/data"
+            }
+        },
+        {
+            "name":"server",
+            "host":{
+                "sourcepath":"/var/app/current/server"
+            }
+        }
+    ],
+    "containerDefinations":[
+        {
+        "enviorment":[
+        {
+            "name":"POSTGRES_USER",
+            "value":"postgres"
+        },
+        {
+            "name":"POSTGRES_PASSWORD",
+            "value":"Kaspro"
+        },
+        {
+            "name":"POSTGRES_DB",
+            "value":"nexus"
+        }
+    ],
+    "essential":true,
+    "image":"postgres:latest",
+    "memory":2.5e+8,
+    "name":"postgres",
+    "portMapping":[{
+        "containerPort":5432,
+        "hostPort":5432
+    }],
+    "mountPoints":[
+        {
+            "sourceVolume": "data",
+          "containerPath": "/var/lib/postgresql/data"
+        }
+    ]
+    },
+    {
+        "essential":true,
+        "image":"redis:latest",
+        "memory":1e+8,
+        "name":"RedisStore",
+        "portMapping":[{
+            "containerPort":6379,
+            "hostPort":6379
+        }],
+        "mountPoints":[
+            {
+                "sourceVolume": "redis_data",
+              "containerPath": "/redis_data/data"
+            }
+        ]
+    },
+    {
+        "image":"tuser9742/serverimage:latest",
+        "name":"server",
+        "memory":1.5e+8,
+        "portMapping":[{
+            "containerPort":4000,
+            "hostPort":4000
+        }],
+        "mountPoints":[
+            {
+                "sourceVolume": "server",
+              "containerPath": "/server/src/app"
+            }
+        ],
+        "essential":true,
+        "links":[
+            "postgres",
+            "RedisStore"
+        ],
+        "depends_on":[
+            "postgres",
+            "RedisStore" 
+        ]
+       
+    }
+]
+}
