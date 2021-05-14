@@ -37,7 +37,7 @@
     },
     {
         "image":"tuser9742/serverimage:latest",
-        "name":"server",
+        "name":"serverimage",
         "essential":true,
         "memory":256,
         "portMapping":[{
@@ -57,22 +57,23 @@
 ],
 "volumes":[
     {
-        "name":"redis_data",
         "host":{
-            "sourcepath":"/var/app/current/redis_data"
-        }
+            "sourcepath":"redis_data"
+        },
+        "name":"redis_data"
     },
     {
-        "name":"data",
+        
         "host":{
-            "sourcepath":"/var/app/current/data"
-        }
+            "sourcepath":"data"
+        },
+        "name":"data"
     },
-    {
-        "name":"server",
+    {        
         "host":{
-            "sourcepath":"/var/app/current/server"
-        }
+            "sourcepath":"server"
+        },
+        "name":"server"
     }
 ]
 }
