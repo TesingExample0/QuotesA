@@ -38,7 +38,7 @@
     ],
     "essential":true,
     "image":"postgres:latest",
-    "memory":256,
+    "memory":2.5e+8,
     "name":"postgres",
     "portMapping":[{
         "containerPort":5432,
@@ -54,7 +54,7 @@
     {
         "essential":true,
         "image":"redis:latest",
-        "memory":128,
+        "memory":1e+8,
         "name":"RedisStore",
         "portMapping":[{
             "containerPort":6379,
@@ -70,7 +70,7 @@
     {
         "image":"tuser9742/serverimage:latest",
         "name":"server",
-        "memory":256,
+        "memory":1.5e+8,
         "portMapping":[{
             "containerPort":4000,
             "hostPort":4000
