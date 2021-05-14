@@ -1,11 +1,11 @@
-version: "3.0"
+version: "3.8"
 services:
   server:
     image: "tuser9742/serverimage"
     # build:
     #   context: "./server"
     restart: always
-    container_name: "server"
+    # container_name: "server"
     ports:
       - 4000:4000
     volumes:
@@ -13,33 +13,33 @@ services:
       - /server/src/app/node_modules
       - /server/src/app/dist
     depends_on:
-      - postgres
+      - postgresDB
       - RedisStore
     links:
-      - postgres
+      - postgresDB
       - RedisStore
     entrypoint: ["node", "dist/index.js"]
     networks:
       - QAnetwork
-  postgres:
+  postgresDB:
     image: postgres:latest
-    container_name: "postgres"
+    # container_name: "postgres"
     restart: always
     environment:
       POSTGRES_PASSWORD: Kaspro
       POSTGRES_USER: postgres
       POSTGRES_DB: nexus
     volumes:
-      - /data:/var/lib/postgresql/data
+      - ./data:/var/lib/postgresql/data
     networks:
       - QAnetwork
   RedisStore:
     image: redis:latest
     restart: always
-    container_name: "RedisStore"
+    # container_name: "RedisStore"
     volumes:
-      - /redis_data:/redis_data/data
-      - /redis_data:/redis_data/redis.config
+      - ./redis_data:/redis_data/data
+      - ./redis_data:/redis_data/redis.config
     hostname: redis
     networks:
       - QAnetwork

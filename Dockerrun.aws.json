@@ -19,17 +19,11 @@
     "essential":true,
     "image":"postgres",
     "memory":256,
-    "name":"postgres",
+    "name":"postgresDB",
     "portMapping":[{
         "containerPort":5432,
         "hostPort":5432
-    }],
-    "mountPoints":[
-        {
-            "sourceVolume": "data",
-          "containerPath": "/var/lib/postgresql/data"
-        }
-    ]
+    }]
     },
     {
         "essential":true,
@@ -39,13 +33,7 @@
         "portMapping":[{
             "containerPort":6379,
             "hostPort":6379
-        }],
-        "mountPoints":[
-            {
-                "sourceVolume": "redis_data",
-              "containerPath": "/redis_data/data"
-            }
-        ]
+        }]
     },
     {
         "image":"tuser9742/serverimage:latest",
@@ -56,18 +44,12 @@
             "containerPort":4000,
             "hostPort":4000
         }],
-        "mountPoints":[
-            {
-                "sourceVolume": "server",
-              "containerPath": "/server/src/app"
-            }
-        ],
         "links":[
-            "postgres",
+            "postgresDB",
             "RedisStore"
         ],
         "depends_on":[
-            "postgres",
+            "postgresDB",
             "RedisStore" 
         ]
        
