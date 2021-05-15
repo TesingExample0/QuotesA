@@ -18,7 +18,7 @@
     ],
     "essential":true,
     "image":"postgres",
-    "memory":256,
+    "memory":100,
     "name":"postgresDB",
     "portMapping":[{
         "containerPort":5432,
@@ -28,7 +28,7 @@
     {
         "essential":true,
         "image":"redis",
-        "memory":128,
+        "memory":100,
         "name":"RedisStore",
         "portMapping":[{
             "containerPort":6379,
@@ -36,10 +36,10 @@
         }]
     },
     {
-        "image":"tuser9742/serverimage:latest",
-        "name":"serverimage",
         "essential":true,
-        "memory":256,
+        "image":"tuser9742/serverimage:latest",
+        "name":"server",
+        "memory":100,
         "portMapping":[{
             "containerPort":4000,
             "hostPort":4000
@@ -58,20 +58,19 @@
 "volumes":[
     {
         "host":{
-            "sourcepath":"redis_data"
+            "sourcepath":"/var/app/current/redis_data"
         },
         "name":"redis_data"
     },
     {
-        
         "host":{
-            "sourcepath":"data"
+            "sourcepath":"/var/app/current/data"
         },
         "name":"data"
     },
-    {        
+    {
         "host":{
-            "sourcepath":"server"
+            "sourcepath":"/var/app/current/server"
         },
         "name":"server"
     }
